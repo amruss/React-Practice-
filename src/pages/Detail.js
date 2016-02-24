@@ -13,7 +13,8 @@ class Detail extends React.Component {
         
         this.state = {
         value: 'R000595',
-        mode: "rubio",
+        name: "Rubio",
+        congressIDs: {"Rubio": 'R000595', "Sanders": 'S000033', "Clinton": 'C001041' , "Cruz": 'C001098'},
         congressMan: [],
         };
         
@@ -35,10 +36,6 @@ class Detail extends React.Component {
     
     componentWillMount() {
         this.fetchFeed(this.state.value);
-        /*this.fetchFeed("hClinton", 'C001041');
-        this.fetchFeed("cruz", 'C001098');
-        this.fetchFeed("sanders", 'S000033');*/
-        
     }
 
     renderRubio() {
@@ -65,19 +62,19 @@ class Detail extends React.Component {
         
         content = this.renderRubio();
         
-        
         return (<div>
                 <input value={this.state.value} onChange={this.handleChange.bind(this)} />
-                <button onClick = {this.selectMode.bind(this, this.state.value)}>Marco Rubio</button>
-
+                <button onClick = {this.fetchFeed.bind(this, this.state.value)}>Search</button>
+                
                 {content}
                 </div>
                 );
-
+        
     }
+        
     
     handleChange(name){
-        this.setState({ value: name.target.value})
+        this.setState({ name: name.target.value});
     }
 
     
