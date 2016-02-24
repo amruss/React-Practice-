@@ -71,11 +71,12 @@ class Detail extends React.Component {
                 );
         
     }
-        
+    
     
     handleChange(name){
-        this.setState({ name: name.target.value});
-    }
+        this.setState({ value: name.target.value});
+        
+            }
 
     
 }
