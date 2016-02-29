@@ -18,8 +18,6 @@ class Detail extends React.Component {
         congressMan: [],
         };
         
-        
-        
     }
 
     fetchFeed(congressID) {
@@ -64,8 +62,8 @@ class Detail extends React.Component {
         
         return (<div>
                 <input value={this.state.value} onChange={this.handleChange.bind(this)} />
-                <button onClick = {this.fetchFeed.bind(this, this.state.value)}>Search</button>
-                
+                <button onClick =  {this.fetchFeed.bind(this, this.state.value)}>Search</button>
+            
                 {content}
                 </div>
                 );
